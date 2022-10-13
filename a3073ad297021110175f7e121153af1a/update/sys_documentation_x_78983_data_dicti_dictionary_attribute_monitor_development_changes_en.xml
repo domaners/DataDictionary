@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="monitor_development_changes" label="Monitor development changes" language="en" table="x_78983_data_dicti_dictionary_attribute">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>monitor_development_changes</element>
+            <help/>
+            <hint/>
+            <label>Monitor development changes</label>
+            <language>en</language>
+            <name>x_78983_data_dicti_dictionary_attribute</name>
+            <plural>Monitor development changes</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-10-10 14:12:21</sys_created_on>
+            <sys_id>aa671f0897e21110175f7e121153af7a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Monitor development changes</sys_name>
+            <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+            <sys_update_name>sys_documentation_x_78983_data_dicti_dictionary_attribute_monitor_development_changes_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-10-10 14:12:21</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
