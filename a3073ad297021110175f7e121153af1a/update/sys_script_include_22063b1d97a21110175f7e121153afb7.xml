@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_78983_data_dicti.ddPayloadProcessor</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ddPayloadProcessor</name>
+        <script><![CDATA[var ddPayloadProcessor = Class.create();
+ddPayloadProcessor.prototype = {
+    initialize: function() {},
+
+    TABLE: new x_78983_data_dicti.ddUtils().TABLE,
+    approvalRequired: false,
+	impactedFields: [],
+
+    process: function(payloadArr, updateSysId) {
+        for (var i = 0; i < payloadArr.length; i++) {
+			var payloadObj = payloadArr[i];
+            var payloadStr = payloadObj.xml + '';
+            var ignoredAttributes = JSON.parse(gs.getProperty(""));
+			for(var j = 0; j<ignoredAttributes.length; j++)
+				payloadStr = this.removeAttrFromPayload(payloadStr, ignoredAttributes[j]);
+			
+			var impactedCIs = [];
+            var payloadGr = new GlideRecord(this.TABLE.UPDATE_PAYLOAD);
+            payloadGr.initialize();
+            payloadGr.payload = payloadStr;
+            payloadGr.dictionary_update = updateSysId + '';
+            payloadGr.name = payloadObj.name;
+            payloadGr.targetName = payloadObj.target_name;
+            payloadGr.type = payloadObj.type;
+            payloadGr.insert();
+
+            if (payloadGr.type == "Dictionary")
+                this.parseNewDictionaryEntry(payloadStr, impactedCIs, updateSysId);
+            else
+                this.parseXmlForFieldAndTable(payloadStr, impactedCIs, updateSysId);
+
+
+            gs.info("AND impacted CIs: " + JSON.stringify(impactedCIs));
+            for (var c = 0; c < impactedCIs.length; c++) {
+                if (impactedCIs[c].length != 32)
+                    continue;
+                var impCiGr = new GlideRecord("task_cmdb_ci_service");
+                impCiGr.initialize();
+                impCiGr.task = updateSysId;
+                impCiGr.cmdb_ci_service = impactedCIs[c];
+                impCiGr.manually_added = false;
+                impCiGr.insert();
+            }
+        }
+        return this.approvalRequired;
+    },
+
+    parseXmlForFieldAndTable: function(payloadStr, impactedCIs, updateSysId) {
+        var ddEntries = new GlideRecord(this.TABLE.DD_FIELD);
+        ddEntries.addQuery("monitor_development_changes", true);
+        ddEntries.query();
+        while (ddEntries.next()) {
+
+            if (impactedCIs.indexOf(ddEntries.service + '') == -1)
+                impactedCIs.push(ddEntries.service + '');
+
+            gs.info("AND Check field " + ddEntries.table.table_name + "." + ddEntries.field_name);
+            if (payloadStr.indexOf(ddEntries.table.table_name + '') > -1 &&
+                payloadStr.indexOf(ddEntries.field_name + '') > -1) {
+                this.addImpactedField(ddEntries.table.table_name, ddEntries.field_name, updateSysId, "unknown");
+                this.approvalRequired = true;
+            }
+        }
+    },
+
+    parseNewDictionaryEntry: function(payloadStr, impactedCIs, updateSysId) {
+        var tableName = this.getElementFromPayload(payloadStr, 'table="', '"');
+		var elementName = this.getElementFromPayload(payloadStr, 'element="', '"');
+		
+		var includedTable = new GlideAggregate(this.TABLE.DD_TABLE);
+		includedTable.addQuery("table_name", tableName);
+		includedTable.addAggregate("COUNT");
+		includedTable.query();
+		includedTable.next();
+		if(includedTable.getAggregate("COUNT") == 0)
+			return;
+		
+		var ddEntry = new GlideAggregate(this.TABLE.DD_FIELD);
+		ddEntry.addQuery("table.table_name", tableName);
+		ddEntry.addQuery("field_name", elementName);
+		ddEntry.addAggregate("COUNT");
+		ddEntry.query();
+		ddEntry.next();
+		if(ddEntry.getAggregate("COUNT") == 0) {
+			this.addImpactedField(tableName, elementName, updateSysId, "new_field");
+            this.approvalRequired = true;
+		} else
+			this.parseXmlForFieldAndTable(payloadStr, impactedCIs, updateSysId);
+		
+    },
+
+    addImpactedField: function(tableName, fieldName, updateSysId, updateType) {
+		if(this.impactedFields.indexOf(tableName + "." + fieldName) > -1)
+			return;
+		
+        var impactedField = new GlideRecord(this.TABLE.IMPACTED_FIELD);
+        impactedField.initialize();
+        impactedField.table_name = tableName;
+        impactedField.field_name = fieldName;
+        impactedField.dictionary_update = updateSysId + '';
+		impactedField.update_type = updateType;
+        impactedField.insert();
+		
+		this.impactedFields.push(tableName + "." + fieldName);
+    },
+	
+	getElementFromPayload: function(payloadStr, startStr, endStr) {
+		var startIndex = payloadStr.indexOf(startStr) + startStr.length;
+		var endIndex = payloadStr.indexOf(endStr, startIndex) - startIndex;
+		return payloadStr.substr(startIndex, endIndex);
+	},
+	
+	removeAttrFromPayload: function(payloadStr, attr) {
+		//STUB: Process the payload to remove the passed attribute and return
+		return payloadStr;
+	},
+
+    type: 'ddPayloadProcessor'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-14 13:59:20</sys_created_on>
+        <sys_id>22063b1d97a21110175f7e121153afb7</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ddPayloadProcessor</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_script_include_22063b1d97a21110175f7e121153afb7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-18 10:19:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

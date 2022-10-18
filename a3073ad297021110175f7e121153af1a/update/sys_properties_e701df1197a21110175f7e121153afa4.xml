@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>The "production" ServiceNow instance name used to master Data Dictionary information. All Dictionary update tasks will be sent to this instance.</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_78983_data_dicti.master_instance</name>
+        <read_roles/>
+        <suffix>master_instance</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-14 10:58:24</sys_created_on>
+        <sys_id>e701df1197a21110175f7e121153afa4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_78983_data_dicti.master_instance</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_properties_e701df1197a21110175f7e121153afa4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-14 10:58:24</sys_updated_on>
+        <type>string</type>
+        <value>dev130136</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=e701df1197a21110175f7e121153afa4"/>
+</record_update>

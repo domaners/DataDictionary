@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_78983_data_dicti.ddUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ddUtils</name>
+        <script><![CDATA[var ddUtils = Class.create();
+ddUtils.prototype = {
+    initialize: function() {},
+
+    TABLE: {
+        "DD_FIELD": "x_78983_data_dicti_dictionary_attribute",
+        "DD_TABLE": "x_78983_data_dicti_included_table",
+        "DICTIONARY_UPDATE": "x_78983_data_dicti_update",
+        "UPDATE_PAYLOAD": "x_78983_data_dicti_update_set_payload",
+        "IMPACTED_FIELD": "x_78983_data_dicti_impacted_field"
+    },
+
+    checkFieldUsage: function(table, ddTableSysId) {
+
+        var tableGr = new GlideRecord(table);
+        tableGr.query();
+        var elementArr = tableGr.getElements();
+
+        for (var i = 0; i < elementArr.length; i++) {
+            var fieldName = elementArr[i].getName();
+            var fieldLabel = elementArr[i].getLabel();
+            if (!this.hasDictionaryEntry(table, fieldName)) {
+                this.createDictionaryEntry(table, elementArr[i], ddTableSysId);
+            }
+        }
+
+    },
+
+    createDictionaryEntry: function(table, glideElement, ddTableSysId) {
+        var newFieldGr = new GlideRecord(this.TABLE.DD_FIELD);
+        newFieldGr.initialize();
+        newFieldGr.field_name = glideElement.getName();
+        newFieldGr.table = ddTableSysId;
+        newFieldGr.field_label = glideElement.getLabel();
+        newFieldGr.is_extended_field = (table == glideElement.getTableName());
+        var sysDictEntry = this.getSysDictionaryEntry(glideElement.getTableName(), glideElement.getName());
+        if (sysDictEntry != null)
+            newFieldGr.dictionary_entry = sysDictEntry.sys_id + '';
+        newFieldGr.insert();
+    },
+
+    hasDictionaryEntry: function(table, fieldName) {
+        var fieldGa = new GlideAggregate(this.TABLE.DD_FIELD);
+        fieldGa.addQuery("field_name", fieldName);
+        fieldGa.addQuery("table.table_name", table);
+        fieldGa.addAggregate("COUNT");
+        fieldGa.query();
+        fieldGa.next();
+        return fieldGa.getAggregate("COUNT") > 0;
+    },
+
+    getSysDictionaryEntry: function(tableName, fieldName) {
+        var dictGr = new GlideRecord("sys_dictionary");
+        dictGr.addQuery("name", tableName);
+        dictGr.addQuery("element", fieldName);
+        dictGr.query();
+        if (dictGr.next())
+            return dictGr;
+        else
+            return null;
+    },
+
+    getFieldUsageStats: function(ddGr) {
+        var tableQry = new GlideAggregate(ddGr.table.table.name + '');
+        tableQry.query();
+        var totalRecs = tableQry.getRowCount();
+
+        tableQry.addNotNullQuery(ddGr.field_name + '');
+        tableQry.addAggregate("COUNT");
+        tableQry.query();
+        tableQry.next();
+        var populatedRecs = tableQry.getAggregate("COUNT");
+
+        ddGr.usage_count = populatedRecs;
+        var pctUsage = (totalRecs / 100) * populatedRecs;
+        ddGr.usage_pct = pctUsage;
+        ddGr.update();
+
+    },
+
+    setupDictionaryUpdate: function(jsonParams) {
+        var approvalRequired = false;
+        var dictUpd = new GlideRecord(this.TABLE.DICTIONARY_UPDATE);
+        dictUpd.initialize();
+        dictUpd.update_set_name = jsonParams.name;
+        dictUpd.update_set_sys_id = jsonParams.sys_id;
+        dictUpd.environment = jsonParams.environment;
+        dictUpd.approval = "not requested";
+        var updateSysId = dictUpd.insert();
+
+        var payloadArr = jsonParams.payload;
+        approvalRequired = new x_78983_data_dicti.ddPayloadProcessor().process(payloadArr, updateSysId);
+        dictUpd.approval = approvalRequired == true ? "requested" : "not_required";
+        dictUpd.update();
+
+        return approvalRequired;
+    },
+
+    type: 'ddUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-03 10:00:07</sys_created_on>
+        <sys_id>81e91a3197521110175f7e121153af2f</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>ddUtils</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_script_include_81e91a3197521110175f7e121153af2f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-17 09:00:40</sys_updated_on>
+    </sys_script_include>
+</record_update>
