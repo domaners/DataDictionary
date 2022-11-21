@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_cubes">
+    <pa_cubes action="INSERT_OR_UPDATE">
+        <benchmarking>false</benchmarking>
+        <calendar>standard</calendar>
+        <calendar_freq/>
+        <conditions/>
+        <description/>
+        <facts_table>x_78983_data_dicti_included_table</facts_table>
+        <facts_table_pk/>
+        <facts_table_pktable/>
+        <facts_table_pkview/>
+        <frequency>10</frequency>
+        <max_record_fetch_count>50000</max_record_fetch_count>
+        <name>_DD Included Tables</name>
+        <override_record_collection>false</override_record_collection>
+        <report_source/>
+        <report_source_updated_at/>
+        <sys_class_name>pa_cubes</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 14:00:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1c01afc997c31110175f7e121153af0e</sys_id>
+        <sys_name>_DD Included Tables</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>pa_cubes_1c01afc997c31110175f7e121153af0e</sys_update_name>
+    </pa_cubes>
+    <sys_translated_text action="delete_multiple" query="documentkey=1c01afc997c31110175f7e121153af0e"/>
+</record_update>

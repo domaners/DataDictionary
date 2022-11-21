@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="service" label="Service" language="en" table="x_78983_data_dicti_m2m_services_dictionary_a">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>service</element>
+            <help/>
+            <hint/>
+            <label>Service</label>
+            <language>en</language>
+            <name>x_78983_data_dicti_m2m_services_dictionary_a</name>
+            <plural>Services</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-10-10 11:30:03</sys_created_on>
+            <sys_name>Service</sys_name>
+            <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+            <sys_update_name>sys_documentation_x_78983_data_dicti_m2m_services_dictionary_a_service_en</sys_update_name>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ae59fa5697421110175f7e121153afaa" label="Dictionary Attribute" max_length="40" name="x_78983_data_dicti_dictionary_attribute" type="collection">
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element label="Dictionary entry" max_length="32" name="dictionary_entry" reference="sys_dictionary" type="reference"/>
+        <element display="true" label="Field Label" max_length="255" name="field_label" type="string"/>
+        <element label="Field Name" max_length="255" name="field_name" type="string"/>
+        <element label="Is Extended Field?" max_length="40" name="is_extended_field" type="boolean"/>
+        <element label="Monitor development changes" max_length="40" name="monitor_development_changes" type="boolean"/>
+        <element label="Service" max_length="32" name="service" reference="cmdb_ci_information_object" type="reference"/>
+        <element label="Table" max_length="32" name="table" reference="x_78983_data_dicti_included_table" type="reference"/>
+        <element label="Usage Count" max_length="15" name="usage_count" type="decimal"/>
+        <element label="Usage Pct" max_length="15" name="usage_pct" type="decimal"/>
+        <index name="index">
+            <element name="dictionary_entry"/>
+        </index>
+        <index name="index2">
+            <element name="service"/>
+        </index>
+        <index name="index3">
+            <element name="table"/>
+        </index>
+    </element>
+</database>

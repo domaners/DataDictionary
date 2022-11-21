@@ -4,13 +4,13 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-03 09:44:39</sys_created_on>
-            <sys_id>f0079e7d97121110175f7e121153af01</sys_id>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>afbedc1c974b1110175f7e121153afbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -18,55 +18,97 @@
             <element>table_name</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-03 09:44:39</sys_created_on>
-            <sys_id>f8079e7d97121110175f7e121153af01</sys_id>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>23bedc1c974b1110175f7e121153afbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>label</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>a3bedc1c974b1110175f7e121153afbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>include</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>27bedc1c974b1110175f7e121153afbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>2</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-03 09:44:39</sys_created_on>
-            <sys_id>7c079e7d97121110175f7e121153af01</sys_id>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>a7bedc1c974b1110175f7e121153afbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>table</element>
-            <position>3</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-03 09:44:39</sys_created_on>
-            <sys_id>fc079e7d97121110175f7e121153af01</sys_id>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>2bbedc1c974b1110175f7e121153afbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>record_count</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>abbedc1c974b1110175f7e121153afbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>4</position>
+            <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-03 09:44:39</sys_created_on>
-            <sys_id>70079e7d97121110175f7e121153af02</sys_id>
+            <sys_created_on>2022-11-04 15:55:23</sys_created_on>
+            <sys_id>2fbedc1c974b1110175f7e121153afbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_included_table" sys_domain="global" view="Default view">78071e3197121110175f7e121153afb8</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
+            <sys_updated_on>2022-11-04 15:55:23</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -81,15 +123,12 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>78071e3197121110175f7e121153afb8</sys_id>
-            <sys_mod_count>0</sys_mod_count>
             <sys_name>x_78983_data_dicti_included_table</sys_name>
             <sys_overrides/>
             <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
             <sys_policy/>
             <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
             <sys_update_name>sys_ui_section_78071e3197121110175f7e121153afb8</sys_update_name>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-03 09:44:39</sys_updated_on>
             <sys_user/>
             <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>

@@ -11,15 +11,12 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>bb69ea0597261110175f7e121153af42</sys_id>
-        <sys_mod_count>1</sys_mod_count>
         <sys_name>FDf769ea0576261110c8c7d5923c7c2d42</sys_name>
         <sys_overrides/>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_update_name>sys_complex_object_bb69ea0597261110175f7e121153af42</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:26:22</sys_updated_on>
         <type>complex_object_collection</type>
     </sys_complex_object>
 </record_update>

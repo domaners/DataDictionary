@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_78983_data_dicti.close_source_update_s</event_name>
+        <name>Close source update set</name>
+        <order>100</order>
+        <script><![CDATA[var request = new sn_ws.RESTMessageV2('x_78983_data_dicti.SN DataDictionary', 'CompleteSourceUpdateSet');
+request.setStringParameterNoEscape('source_instance', current.environment+'');
+
+var json = {
+	"update_set_name": current.update_set_name+'',
+	"update_set_sys_id": current.update_set_sys_id
+};
+
+request.setRequestBody(json);
+
+var response = request.execute();
+var responseJson = JSON.parse(response.getBody()).result;
+
+if(responseJson.update_set_completed == true) {
+	current.state = -5;
+	current.work_notes = "Update set '" + current.update_set_name + "' has been set to Completed in instance '" + current.evironment + "'.";
+	current.update();
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-10-18 15:42:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>99c8b8b297e61110175f7e121153af15</sys_id>
+        <sys_name>Close source update set</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sysevent_script_action_99c8b8b297e61110175f7e121153af15</sys_update_name>
+    </sysevent_script_action>
+</record_update>

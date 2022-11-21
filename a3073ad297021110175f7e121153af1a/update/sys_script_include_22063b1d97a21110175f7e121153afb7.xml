@@ -130,13 +130,10 @@ ddPayloadProcessor.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-14 13:59:20</sys_created_on>
         <sys_id>22063b1d97a21110175f7e121153afb7</sys_id>
-        <sys_mod_count>7</sys_mod_count>
         <sys_name>ddPayloadProcessor</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_update_name>sys_script_include_22063b1d97a21110175f7e121153afb7</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-18 10:19:06</sys_updated_on>
     </sys_script_include>
 </record_update>

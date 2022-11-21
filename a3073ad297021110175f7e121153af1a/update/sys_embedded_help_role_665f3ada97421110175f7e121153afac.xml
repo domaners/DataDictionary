@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role/>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-09-22 15:42:09</sys_created_on>
+        <sys_id>665f3ada97421110175f7e121153afac</sys_id>
+        <sys_name>ae5f3ada97421110175f7e121153afaa</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_embedded_help_role_665f3ada97421110175f7e121153afac</sys_update_name>
+    </sys_embedded_help_role>
+</record_update>

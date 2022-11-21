@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas">
+    <sys_grid_canvas action="INSERT_OR_UPDATE">
+        <legacy_page display_value="PA Data Dictionary Over - New Tab">3753638d97c31110175f7e121153afb5</legacy_page>
+        <name>PA Data Dictionary Over - New Tab</name>
+        <sys_class_name>sys_grid_canvas</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 14:09:55</sys_created_on>
+        <sys_id>7b53638d97c31110175f7e121153afb6</sys_id>
+        <sys_name>PA Data Dictionary Over - New Tab</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_grid_canvas_7b53638d97c31110175f7e121153afb6</sys_update_name>
+    </sys_grid_canvas>
+</record_update>

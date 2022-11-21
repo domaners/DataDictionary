@@ -11,15 +11,11 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2022-10-14 11:10:16</sys_created_on>
-            <sys_id>ae145fd197a21110175f7e121153af31</sys_id>
-            <sys_mod_count>0</sys_mod_count>
             <sys_name>Type</sys_name>
             <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
             <sys_policy/>
             <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
             <sys_update_name>sys_documentation_x_78983_data_dicti_update_set_payload_type_en</sys_update_name>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-14 11:10:16</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

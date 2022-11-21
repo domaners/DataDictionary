@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="fb830d7897e21110175f7e121153afef" label="Update set Payload" max_length="40" name="x_78983_data_dicti_update_set_payload" type="collection">
+        <element label="Dictionary Update" max_length="32" name="dictionary_update" reference="x_78983_data_dicti_update" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="Payload" max_length="4096000" name="payload" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Target name" max_length="40" name="target_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Type" max_length="40" name="type" type="string"/>
+        <index name="index">
+            <element name="dictionary_update"/>
+        </index>
+    </element>
+</database>

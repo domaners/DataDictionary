@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>table</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Get Table name and label</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if(newValue === '') {
+		g_form.clearValue("table_name");
+		g_form.clearValue("label");
+	}
+	
+	if (isLoading || newValue === '') {
+        return;
+    }
+
+    var tbl = g_form.getReference("table", (function(tableGr) {
+        g_form.setValue("table_name", tableGr.name);
+		g_form.setValue("label", tableGr.label);
+    }));
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-04 15:44:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bdea1858974b1110175f7e121153aff5</sys_id>
+        <sys_name>Get Table name and label</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_script_client_bdea1858974b1110175f7e121153aff5</sys_update_name>
+        <table>x_78983_data_dicti_included_table</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

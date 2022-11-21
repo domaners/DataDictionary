@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f042fa8097621110175f7e121153af6f" label="Data Dicti M2m Services Dictionary A" max_length="40" name="x_78983_data_dicti_m2m_services_dictionary_a" type="collection">
+        <element attributes="encode_utf8=false" label="Dictionary Attribute" max_length="32" name="dictionary_attribute" reference="x_78983_data_dicti_dictionary_attribute" type="reference"/>
+        <element attributes="encode_utf8=false" label="Service" max_length="32" name="service" reference="cmdb_ci_service" type="reference"/>
+        <index name="index">
+            <element name="dictionary_attribute"/>
+        </index>
+        <index name="index2">
+            <element name="service"/>
+        </index>
+    </element>
+</database>

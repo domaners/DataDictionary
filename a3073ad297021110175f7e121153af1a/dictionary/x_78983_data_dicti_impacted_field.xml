@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="29cb29fc97661110175f7e121153af57" label="Impacted field" max_length="40" name="x_78983_data_dicti_impacted_field" type="collection">
+        <element label="Dictionary update" max_length="32" name="dictionary_update" reference="x_78983_data_dicti_update" type="reference"/>
+        <element label="Field name" max_length="40" name="field_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Impact status" max_length="40" name="impact_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Impacted" value="impacted"/>
+                <element inactive_on_update="false" label="Not impacted" value="not_impacted"/>
+            </choice>
+        </element>
+        <element label="Table name" max_length="40" name="table_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Update type" max_length="40" name="update_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="New field created" sequence="1" value="new_field"/>
+                <element inactive_on_update="false" label="Script reading from field" sequence="2" value="script_read"/>
+                <element inactive_on_update="false" label="Script updating field" sequence="3" value="script_update"/>
+                <element inactive_on_update="false" label="Unknown" sequence="100" value="unknown"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="dictionary_update"/>
+        </index>
+    </element>
+</database>

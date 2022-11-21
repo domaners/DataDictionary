@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Record counts for included tables</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2022-11-07 11:22:57</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[getRecCounts();
+
+function getRecCounts() {
+	var it = new GlideRecord("x_78983_data_dicti_included_table");
+	it.addQuery("include", true);
+	it.query();
+	while(it.next()) {
+		var tbl = new GlideAggregate(it.table_name+'');
+		tbl.addAggregate("COUNT");
+		tbl.query();
+		tbl.next();
+
+		it.record_count = tbl.getAggregate("COUNT");
+		it.update();
+	}	
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 11:26:47</sys_created_on>
+        <sys_id>f12d3e8997431110175f7e121153af9e</sys_id>
+        <sys_name>Record counts for included tables</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sysauto_script_f12d3e8997431110175f7e121153af9e</sys_update_name>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

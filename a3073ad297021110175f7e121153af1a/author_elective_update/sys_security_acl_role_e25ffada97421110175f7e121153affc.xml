@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-09-22 15:42:10</sys_created_on>
+        <sys_id>e25ffada97421110175f7e121153affc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_78983_data_dicti_included_table.x_78983_data_dicti.included_table_user</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_security_acl display_value="x_78983_data_dicti_included_table">ea5ffada97421110175f7e121153aff9</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_e25ffada97421110175f7e121153affc</sys_update_name>
+        <sys_updated_by>adam.domanski</sys_updated_by>
+        <sys_updated_on>2022-09-22 15:42:10</sys_updated_on>
+        <sys_user_role display_value="x_78983_data_dicti.included_table_user" name="x_78983_data_dicti.included_table_user">ae5f3ada97421110175f7e121153afaa</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</application>
+        <file_path/>
+        <instance_id>b6fc919fdb7499502f68c5970596196a</instance_id>
+        <instance_name>dev130136</instance_name>
+        <name>sys_security_acl_role_e25ffada97421110175f7e121153affc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>adam.domanski</sys_created_by><sys_created_on>2022-09-22 15:42:10</sys_created_on><sys_id>e25ffada97421110175f7e121153affc</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_78983_data_dicti_included_table.x_78983_data_dicti.included_table_user</sys_name><sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package><sys_policy/><sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope><sys_security_acl display_value="x_78983_data_dicti_included_table">ea5ffada97421110175f7e121153aff9</sys_security_acl><sys_update_name>sys_security_acl_role_e25ffada97421110175f7e121153affc</sys_update_name><sys_updated_by>adam.domanski</sys_updated_by><sys_updated_on>2022-09-22 15:42:10</sys_updated_on><sys_user_role display_value="x_78983_data_dicti.included_table_user" name="x_78983_data_dicti.included_table_user">ae5f3ada97421110175f7e121153afaa</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>1752696107</payload_hash>
+        <record_name>x_78983_data_dicti_included_table.x_78983_data_dicti.included_table_user</record_name>
+        <reverted_from/>
+        <source>e3077ad297421110175f7e121153af4b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-09-22 15:42:10</sys_created_on>
+        <sys_id>665ffada97421110175f7e121153affe</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_recorded_at>18365dd117d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-14 09:34:06</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>ae5ffada084211105b923c01706db4fd</update_guid>
+        <update_guid_history>ae5ffada084211105b923c01706db4fd:1752696107</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_78983_data_dicti_included_table.x_78983_data_dicti.included_table_user">e9ed3edd97221110175f7e121153af8d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-14 09:33:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>03a9d778d94e445f8ccd2b61cb143c01</sys_id>
+        <sys_metadata>e25ffada97421110175f7e121153affc</sys_metadata>
+        <sys_name>x_78983_data_dicti_included_table.x_78983_data_dicti.included_table_user</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_parent display_value="x_78983_data_dicti_included_table">ea5ffada97421110175f7e121153aff9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_scope_delete display_value="">0675eab49b9f4d0c8044ba69069f7604</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_e25ffada97421110175f7e121153affc</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_e25ffada97421110175f7e121153affc">665ffada97421110175f7e121153affe</sys_update_version>
+    </sys_metadata_delete>
+</record_update>

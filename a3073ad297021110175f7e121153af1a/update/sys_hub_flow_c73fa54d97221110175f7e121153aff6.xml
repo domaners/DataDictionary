@@ -6,7 +6,6 @@
         <annotation/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
-        <compiler_build>glide-sandiego-12-22-2021__patch1-03-02-2022_03-17-2022_1811.zip</compiler_build>
         <copied_from/>
         <copied_from_name/>
         <description/>
@@ -16,6 +15,7 @@
         <name>Dictionary update approval</name>
         <natlang/>
         <outputs/>
+        <pre_compiled>false</pre_compiled>
         <remote_trigger_id>60aa268597261110175f7e121153aff0</remote_trigger_id>
         <run_as>system</run_as>
         <run_with_roles/>
@@ -29,15 +29,12 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c73fa54d97221110175f7e121153aff6</sys_id>
-        <sys_mod_count>14</sys_mod_count>
         <sys_name>Dictionary update approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_update_name>sys_hub_flow_c73fa54d97221110175f7e121153aff6</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=c73fa54d97221110175f7e121153aff6"/>
@@ -189,6 +186,7 @@
         <element>changed_fields</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -235,6 +233,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -270,6 +269,7 @@
         <element>table_name</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -316,6 +316,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -351,6 +352,7 @@
         <element>current</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -397,6 +399,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -410,7 +413,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot/>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>4</order>
@@ -419,10 +421,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 13:23:54</sys_created_on>
         <sys_id>4a19620597261110175f7e121153af9b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>61927053-30c7-4bdf-bbfc-c5ba0fc26063</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=4a19620597261110175f7e121153af9b"/>
@@ -499,7 +501,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>8</order>
@@ -508,10 +509,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:17</sys_created_on>
         <sys_id>6d51310197621110175f7e121153af9e</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>76388761-43e1-44e3-aef0-3e1e696d5bd8</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6d51310197621110175f7e121153af9e"/>
@@ -588,7 +589,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>1</order>
@@ -597,10 +597,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:17</sys_created_on>
         <sys_id>9151310197621110175f7e121153af7f</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>1947e7d0-dfbd-442a-98fd-6a6568aabf82</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=9151310197621110175f7e121153af7f"/>
@@ -677,7 +677,6 @@
         <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>2</order>
@@ -686,10 +685,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:17</sys_created_on>
         <sys_id>a551310197621110175f7e121153af88</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>04517680-3f54-4324-8357-0e85f7cde193</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a551310197621110175f7e121153af88"/>
@@ -740,7 +739,6 @@
         <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>6</order>
@@ -749,10 +747,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:17</sys_created_on>
         <sys_id>a551310197621110175f7e121153af94</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>e30fb4cb-5cb8-4dce-9992-70b82e4c9893</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a551310197621110175f7e121153af94"/>
@@ -907,7 +905,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent/>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">c73fa54d97221110175f7e121153aff6</flow>
         <order>10</order>
@@ -916,10 +913,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:17</sys_created_on>
         <sys_id>ad51310197621110175f7e121153afa6</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-10-13 13:30:38</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-10-13 13:34:02</sys_updated_on>
         <ui_id>21246702-f1b4-4fe7-a41b-aa70efa5631e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ad51310197621110175f7e121153afa6"/>
@@ -1242,7 +1239,7 @@
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"5251710197621110175f7e121153afcf","name":"plan","plan_signature":null}}</plan>
         <plan_id>c73fa54d97221110175f7e121153aff6</plan_id>
-        <snapshot>7951710197621110175f7e121153af1d</snapshot>
+        <snapshot>926b26c597261110175f7e121153afda</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-10-13 09:20:21</sys_created_on>
         <sys_domain>global</sys_domain>
@@ -1392,6 +1389,7 @@
         <element>current</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -1438,6 +1436,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -1473,6 +1472,7 @@
         <element>table_name</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -1519,6 +1519,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -1554,6 +1555,7 @@
         <element>changed_fields</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <help/>
@@ -1600,6 +1602,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
@@ -1613,7 +1616,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>8</order>
@@ -1702,7 +1704,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>10</order>
@@ -1791,7 +1792,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>4</order>
@@ -1880,7 +1880,6 @@
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <comment/>
-        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>1</order>
@@ -1969,7 +1968,6 @@
         <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
         <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <comment/>
-        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>2</order>
@@ -2032,7 +2030,6 @@
         <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
         <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
         <comment/>
-        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
         <display_text/>
         <flow display_value="Dictionary update approval">7951710197621110175f7e121153af1d</flow>
         <order>6</order>
@@ -2440,8 +2437,9 @@
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_7951710197621110175f7e121153af1d"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_7951710197621110175f7e121153af1d"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_7951710197621110175f7e121153af1d"/>
-    <sys_hub_flow action="update">
+    <sys_hub_flow action="UPDATE">
         <sys_id>c73fa54d97221110175f7e121153aff6</sys_id>
         <latest_snapshot>7951710197621110175f7e121153af1d</latest_snapshot>
+        <compiler_build>glide-sandiego-12-22-2021__patch1-03-02-2022_03-17-2022_1811.zip</compiler_build>
     </sys_hub_flow>
 </record_update>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_78983_data_dicti_update_set_payload" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>dictionary_update</element>
+            <list_id display_value="x_78983_data_dicti_update_set_payload" element="NULL" name="x_78983_data_dicti_update_set_payload" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6cb70d7c97e21110175f7e121153af7e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-10-12 11:39:53</sys_created_on>
+            <sys_id>28b70d7c97e21110175f7e121153af7f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-10-12 11:39:53</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>payload</element>
+            <list_id display_value="x_78983_data_dicti_update_set_payload" element="NULL" name="x_78983_data_dicti_update_set_payload" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6cb70d7c97e21110175f7e121153af7e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-10-12 11:39:53</sys_created_on>
+            <sys_id>a8b70d7c97e21110175f7e121153af7f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-10-12 11:39:53</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_78983_data_dicti_update_set_payload</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-10-12 11:39:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6cb70d7c97e21110175f7e121153af7e</sys_id>
+            <sys_name>x_78983_data_dicti_update_set_payload</sys_name>
+            <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+            <sys_update_name>sys_ui_list_x_78983_data_dicti_update_set_payload_null</sys_update_name>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

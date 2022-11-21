@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Data Dictionary">7ea9329697421110175f7e121153af9b</application>
+        <filter/>
+        <name>Dictionary updates</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_78983_data_dicti.dictionary_update_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-10 14:49:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>15ff5b0097261110175f7e121153af26</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dictionary updates</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_ui_module_15ff5b0097261110175f7e121153af26</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-10 14:49:41</sys_updated_on>
+        <table>x_78983_data_dicti_dictionary_update</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</application>
+        <file_path/>
+        <instance_id>b6fc919fdb7499502f68c5970596196a</instance_id>
+        <instance_name>dev130136</instance_name>
+        <name>sys_ui_module_15ff5b0097261110175f7e121153af26</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Data Dictionary">7ea9329697421110175f7e121153af9b</application><filter/><name>Dictionary updates</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_78983_data_dicti.dictionary_update_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-10-10 14:49:41</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>15ff5b0097261110175f7e121153af26</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Dictionary updates</sys_name><sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package><sys_policy/><sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope><sys_update_name>sys_ui_module_15ff5b0097261110175f7e121153af26</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-10-10 14:49:41</sys_updated_on><table>x_78983_data_dicti_dictionary_update</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>-1985926668</payload_hash>
+        <record_name>Dictionary updates</record_name>
+        <reverted_from/>
+        <source>e3077ad297421110175f7e121153af4b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-10 14:49:41</sys_created_on>
+        <sys_id>55ff5b0097261110175f7e121153af29</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_recorded_at>183c25f7c550000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-10-14 09:22:04</sys_updated_on>
+        <type>Module</type>
+        <update_guid>9dff5b00e926111021428d94f2975628</update_guid>
+        <update_guid_history>9dff5b00e926111021428d94f2975628:-1985926668</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-10-14 09:20:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>7a2db8237dc04f1aac007072b44dcd41</sys_id>
+        <sys_metadata>15ff5b0097261110175f7e121153af26</sys_metadata>
+        <sys_name>Dictionary updates</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_scope_delete display_value="">0675eab49b9f4d0c8044ba69069f7604</sys_scope_delete>
+        <sys_update_name>sys_ui_module_15ff5b0097261110175f7e121153af26</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_15ff5b0097261110175f7e121153af26">55ff5b0097261110175f7e121153af29</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
