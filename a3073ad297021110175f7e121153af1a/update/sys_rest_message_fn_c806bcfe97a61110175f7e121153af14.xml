@@ -6,12 +6,12 @@
         <basic_auth_user/>
         <content/>
         <function_name>CompleteSourceUpdateSet</function_name>
-        <http_method>put</http_method>
+        <http_method>post</http_method>
         <lock>false</lock>
         <oauth2_profile/>
         <protocol_name/>
         <qualified_name>SN DataDictionary [ CompleteSourceUpdateSet ]</qualified_name>
-        <rest_endpoint>https://${source_instance}.service-now.com/api/x_78983_data_dicti/data_dictionary</rest_endpoint>
+        <rest_endpoint>https://${source_instance}.service-now.com/api/x_78983_data_dicti/data_dictionary/complete_update_set</rest_endpoint>
         <rest_message display_value="SN DataDictionary">720c13ae97621110175f7e121153af5b</rest_message>
         <sys_class_name>sys_rest_message_fn</sys_class_name>
         <sys_created_by>adam.domanski</sys_created_by>

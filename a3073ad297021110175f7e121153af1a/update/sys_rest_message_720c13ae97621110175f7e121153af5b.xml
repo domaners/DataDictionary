@@ -3,7 +3,7 @@
         <access>public</access>
         <authentication_type>basic</authentication_type>
         <basic_auth_password/>
-        <basic_auth_profile display_value="SN dev130136">787c97ae97621110175f7e121153af82</basic_auth_profile>
+        <basic_auth_profile display_value="SN piit17">38e57cfe97a61110175f7e121153af69</basic_auth_profile>
         <basic_auth_user/>
         <description/>
         <name>SN DataDictionary</name>

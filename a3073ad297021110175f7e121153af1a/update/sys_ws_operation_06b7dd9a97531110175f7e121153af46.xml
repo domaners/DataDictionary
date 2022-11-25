@@ -6,31 +6,23 @@
         <default_operation_uri/>
         <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
         <http_method>POST</http_method>
-        <name>Create DD Request</name>
+        <name>Complete Update Set</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
-    gs.info("AND CALLED");
-	
-	var reqJson = request.body.data;
-	
-	gs.info("AND JSON: " + JSON.stringify(reqJson));
-	
-	var requiresApproval = new x_78983_data_dicti.ddUtils().setupDictionaryUpdate(reqJson);
-		
+    var reqJson = request.body.data;
+	var confirmed = new ddUtils().updateSourceUpdateSetState(reqJson.update_set_sys_id, "complete");
 	var json = {
-		"requires_approval": requiresApproval
+		"confirmed": confirmed
 	};
-	
-	gs.info("AND RESPONSE: " + JSON.stringify(json));
 	
 	response.setContentType("application/json");
 	response.setBody(json);
-
+	
 })(request, response);]]></operation_script>
-        <operation_uri>/api/x_78983_data_dicti/data_dictionary/create_req</operation_uri>
+        <operation_uri>/api/x_78983_data_dicti/data_dictionary/complete_update_set</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
         <produces_customized>false</produces_customized>
-        <relative_path>/create_req</relative_path>
+        <relative_path>/complete_update_set</relative_path>
         <request_example/>
         <requires_acl_authorization>true</requires_acl_authorization>
         <requires_authentication>true</requires_authentication>
@@ -38,13 +30,13 @@
         <short_description/>
         <sys_class_name>sys_ws_operation</sys_class_name>
         <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-10-12 09:48:10</sys_created_on>
-        <sys_id>6fececb097a21110175f7e121153afac</sys_id>
-        <sys_name>Create DD Request</sys_name>
+        <sys_created_on>2022-11-23 11:28:20</sys_created_on>
+        <sys_id>06b7dd9a97531110175f7e121153af46</sys_id>
+        <sys_name>Complete Update Set</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_update_name>sys_ws_operation_6fececb097a21110175f7e121153afac</sys_update_name>
+        <sys_update_name>sys_ws_operation_06b7dd9a97531110175f7e121153af46</sys_update_name>
         <web_service_definition display_value="Data Dictionary">7ae5306497e61110175f7e121153af7f</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

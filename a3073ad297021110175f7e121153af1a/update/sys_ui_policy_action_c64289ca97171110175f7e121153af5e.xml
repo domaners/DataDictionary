@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>information_object</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-11-22 15:15:55</sys_created_on>
+        <sys_id>c64289ca97171110175f7e121153af5e</sys_id>
+        <sys_name>information_object</sys_name>
+        <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
+        <sys_update_name>sys_ui_policy_action_c64289ca97171110175f7e121153af5e</sys_update_name>
+        <table>x_78983_data_dicti_included_table</table>
+        <ui_policy display_value="Information Object mandatory">143209ca97171110175f7e121153af90</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+</record_update>

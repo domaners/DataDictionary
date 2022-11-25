@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="e745a9f497661110175f7e121153af76" extends="task" label="Dictionary update" max_length="40" name="x_78983_data_dicti_update" type="collection">
+    <element audit="true" db_object_id="e745a9f497661110175f7e121153af76" extends="task" label="Dictionary update" max_length="40" name="x_78983_data_dicti_update" type="collection">
         <element label="Application" max_length="32" name="application" reference="sys_app" type="reference"/>
         <element label="Environment" max_length="40" name="environment" type="string"/>
         <element label="Update set name" max_length="40" name="update_set_name" type="string"/>

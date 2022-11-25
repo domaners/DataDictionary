@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="09fef29a97421110175f7e121153af5a" label="Included Table" max_length="40" name="x_78983_data_dicti_included_table" type="collection">
         <element label="Include?" max_length="40" name="include" type="boolean"/>
+        <element attributes="encode_utf8=false" label="Information Object" max_length="32" name="information_object" reference="cmdb_ci_information_object" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Label" max_length="40" name="label" read_only="true" type="string"/>
         <element label="Record Count" max_length="40" name="record_count" read_only="true" type="integer"/>
         <element label="Table" mandatory="true" max_length="32" name="table" reference="sys_db_object" type="reference"/>
         <element display="true" label="Table name" max_length="40" name="table_name" read_only="true" type="string"/>
         <index name="index">
+            <element name="information_object"/>
+        </index>
+        <index name="index2">
             <element name="table"/>
         </index>
     </element>

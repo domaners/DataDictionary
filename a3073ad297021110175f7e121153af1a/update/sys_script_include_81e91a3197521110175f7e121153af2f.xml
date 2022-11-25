@@ -19,7 +19,7 @@ ddUtils.prototype = {
         "IMPACTED_FIELD": "x_78983_data_dicti_impacted_field"
     },
 
-    checkFieldUsage: function(table, ddTableSysId) {
+    checkFieldUsage: function(table, ddTableGr) {
 
         var tableGr = new GlideRecord(table);
         tableGr.query();
@@ -29,19 +29,21 @@ ddUtils.prototype = {
             var fieldName = elementArr[i].getName();
             var fieldLabel = elementArr[i].getLabel();
             if (!this.hasDictionaryEntry(table, fieldName)) {
-                this.createDictionaryEntry(table, elementArr[i], ddTableSysId);
+                this.createDictionaryEntry(table, elementArr[i], ddTableGr);
             }
         }
 
     },
 
-    createDictionaryEntry: function(table, glideElement, ddTableSysId) {
+    createDictionaryEntry: function(table, glideElement, ddTableGr) {
         var newFieldGr = new GlideRecord(this.TABLE.DD_FIELD);
         newFieldGr.initialize();
         newFieldGr.field_name = glideElement.getName();
-        newFieldGr.table = ddTableSysId;
+        newFieldGr.table = ddTableGr.sys_id+'';
         newFieldGr.field_label = glideElement.getLabel();
         newFieldGr.is_extended_field = (table == glideElement.getTableName());
+		newFieldGr.service = ddTableGr.information_object+'';
+		newFieldGr.monitor_development_changes = ddTableGr.include+'';
         var sysDictEntry = this.getSysDictionaryEntry(glideElement.getTableName(), glideElement.getName());
         if (sysDictEntry != null)
             newFieldGr.dictionary_entry = sysDictEntry.sys_id + '';
@@ -99,12 +101,51 @@ ddUtils.prototype = {
 
         var payloadArr = jsonParams.payload;
         approvalRequired = new x_78983_data_dicti.ddPayloadProcessor().process(payloadArr, updateSysId);
-        dictUpd.approval = approvalRequired == true ? "requested" : "not_required";
+        //dictUpd.approval = approvalRequired == true ? "requested" : "not_required";
         dictUpd.update();
 
         return approvalRequired;
     },
 
+	cancelDictionaryUpdate: function(jsonParams) {
+		var hasClosedTasks = false;
+		var cancelTask = new GlideRecord(this.TABLE.DICTIONARY_UPDATE);
+		cancelTask.addQuery("update_set_sys_id", jsonParams.sys_id);
+		cancelTask.addQuery("state", "IN", [ 1, 2 ]);
+		cancelTask.query();
+		while(cancelTask.next()) {
+			cancelTask.state = 4; // Cancelled
+			cancelTask.active = false;
+			cancelTask.work_notes = gs.getMessage("dd_req_cancelled_on_update_set_reimp");
+			cancelTask.update();
+			
+			hasClosedTasks = true;
+		}
+		return hasClosedTasks;
+	},
+	
+	isUserMemberOfGroup: function(userId, groupId) {
+		var grm = new GlideAggregate("sys_user_group");
+		grm.addQuery("group", groupId);
+		grm.addQuery("user", userId);
+		grm.addAggregate("COUNT");
+		grm.query();
+		grm.next();
+		return grm.getAggregate("COUNT") > 0;
+	},
+	
+	updateSourceUpdateSetState: function(updateSetSysId, newState) {
+		var updated = false;
+		var updateSetGr = new GlideRecord("sys_update_set");
+		if(updateSetGr.get(updateSetSysId)) {
+			updateSetGr.state = newState;
+			updateSetGr.description = gs.getMessage("dd_update_set_completed_by_req");
+			updateSetGr.update();
+			return true;
+		}
+		return false;
+	},
+	
     type: 'ddUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>

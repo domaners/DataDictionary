@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_auth_profile_basic">
     <sys_auth_profile_basic action="INSERT_OR_UPDATE">
         <name>SN piit17</name>
-        <password>﷞﷟﷒30fafd6897351110175f7e121153af90﷬﷔1﷬﷭Pl5bsZWZV5BGoz6gpgGoRw==S1y1za9nlaDgrY_k3n2egAj2CKym_Ueeyw==﷮﷯</password>
+        <password>﷞﷟﷒30fafd6897351110175f7e121153af90﷬﷔1﷬﷭_RC_Z4vJ90jntim48xZvYw==v4U0jfAv3ZSsG2s6DlwSnL2QpHhLzQ7IhA==﷮﷯</password>
         <sys_class_name>sys_auth_profile_basic</sys_class_name>
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-10-18 15:30:07</sys_created_on>
@@ -11,6 +11,6 @@
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_update_name>sys_auth_profile_basic_38e57cfe97a61110175f7e121153af69</sys_update_name>
-        <username>admin</username>
+        <username>adam.domanski</username>
     </sys_auth_profile_basic>
 </record_update>

@@ -6,7 +6,7 @@
         <element label="Field Name" max_length="255" name="field_name" type="string"/>
         <element label="Is Extended Field?" max_length="40" name="is_extended_field" type="boolean"/>
         <element label="Monitor development changes" max_length="40" name="monitor_development_changes" type="boolean"/>
-        <element label="Service" max_length="32" name="service" reference="cmdb_ci_information_object" type="reference"/>
+        <element label="Information Object" max_length="32" name="service" reference="cmdb_ci_information_object" type="reference"/>
         <element label="Table" max_length="32" name="table" reference="x_78983_data_dicti_included_table" type="reference"/>
         <element label="Usage Count" max_length="15" name="usage_count" type="decimal"/>
         <element label="Usage Pct" max_length="15" name="usage_pct" type="decimal"/>

@@ -19,9 +19,11 @@ ddPayloadProcessor.prototype = {
         for (var i = 0; i < payloadArr.length; i++) {
 			var payloadObj = payloadArr[i];
             var payloadStr = payloadObj.xml + '';
-            var ignoredAttributes = JSON.parse(gs.getProperty(""));
+            // STUB: Needs fixing
+			/*var ignoredAttributes = JSON.parse(gs.getProperty(""));
 			for(var j = 0; j<ignoredAttributes.length; j++)
 				payloadStr = this.removeAttrFromPayload(payloadStr, ignoredAttributes[j]);
+			*/
 			
 			var impactedCIs = [];
             var payloadGr = new GlideRecord(this.TABLE.UPDATE_PAYLOAD);

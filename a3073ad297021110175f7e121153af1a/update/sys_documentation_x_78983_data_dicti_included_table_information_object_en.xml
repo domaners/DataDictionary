@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="service" label="Information Object" language="en" table="x_78983_data_dicti_dictionary_attribute">
+    <sys_documentation element="information_object" label="Information Object" language="en" table="x_78983_data_dicti_included_table">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>service</element>
+            <element>information_object</element>
             <help/>
             <hint/>
             <label>Information Object</label>
             <language>en</language>
-            <name>x_78983_data_dicti_dictionary_attribute</name>
+            <name>x_78983_data_dicti_included_table</name>
             <plural>Information Objects</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>adam.domanski</sys_created_by>
-            <sys_created_on>2022-09-22 15:31:40</sys_created_on>
+            <sys_created_on>2022-11-22 15:15:04</sys_created_on>
             <sys_name>Information Object</sys_name>
             <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
             <sys_policy/>
             <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-            <sys_update_name>sys_documentation_x_78983_data_dicti_dictionary_attribute_service_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_78983_data_dicti_included_table_information_object_en</sys_update_name>
             <url/>
             <url_target/>
         </sys_documentation>

@@ -65,7 +65,7 @@
 
     if (responseJson.requires_approval) {
         current.state = "awaiting_approval";
-        current.description = "NOTE: Data dictionary approval required from production instance.";
+        current.description = gs.getMessage("dd_approval_required");
         current.update();
     }
 

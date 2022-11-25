@@ -7,14 +7,14 @@
 
 }]]></client_script_v2>
         <comments/>
-        <condition/>
+        <condition>current.state == 1 &amp;&amp; new x_78983_data_dicti.ddUtils().isUserMemberOfGroup(gs.getUserID(), current.assignment_group+'')</condition>
         <form_action>true</form_action>
-        <form_button>false</form_button>
+        <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
         <form_context_menu>false</form_context_menu>
-        <form_link>true</form_link>
+        <form_link>false</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style/>
+        <form_style>primary</form_style>
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
         <isolate_script>false</isolate_script>
@@ -27,28 +27,42 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Get table fields</name>
+        <name>Submit for Approval</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[new x_78983_data_dicti.ddUtils().checkFieldUsage(current.table.name+'', current);
-action.setRedirectUrl(current);]]></script>
+        <script><![CDATA[submitForApproval();
+
+function submitForApproval() {
+	var impFields = new GlideAggregate("x_78983_data_dicti_update");
+	impFields.addQuery("dictionary_update", current.sys_id+'');
+	impFields.addNullQuery("impact_status");
+	impFields.addAggregate("COUNT");
+	impFields.query();
+	impFields.next();
+	if(impFields.getAggregate("COUNT") == 0) {
+		current.approval = "requested";
+		current.update();
+	} else {
+		gs.addInfoMessage("Please assess the impact of all records in the Impacted fields related list");
+	}
+}]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-10-06 15:29:40</sys_created_on>
+        <sys_created_by>adam.domanski</sys_created_by>
+        <sys_created_on>2022-11-22 16:16:40</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>83a283f297521110175f7e121153af8d</sys_id>
-        <sys_name>Get table fields</sys_name>
+        <sys_id>4aed898697571110175f7e121153af8f</sys_id>
+        <sys_name>Submit for Approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_update_name>sys_ui_action_83a283f297521110175f7e121153af8d</sys_update_name>
-        <table>x_78983_data_dicti_included_table</table>
+        <sys_update_name>sys_ui_action_4aed898697571110175f7e121153af8f</sys_update_name>
+        <table>x_78983_data_dicti_update</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>

@@ -4,36 +4,34 @@
         <application display_value="Data Dictionary">b6a9329697421110175f7e121153af94</application>
         <assessment/>
         <device_type/>
-        <filter table="x_78983_data_dicti_included_table">include=true^EQ<item endquery="false" field="include" goto="false" newquery="false" operator="=" or="false" value="true"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter>
+        <filter/>
         <hint/>
         <homepage/>
         <image/>
-        <link_type>LIST</link_type>
+        <link_type>DIRECT</link_type>
         <map_page/>
-        <mobile_title>Included Tables</mobile_title>
+        <mobile_title>Properties</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_78983_data_dicti_included_table</name>
-        <order/>
+        <name/>
+        <order>400</order>
         <override_menu_roles>false</override_menu_roles>
-        <query/>
+        <query>system_properties_ui.do?sysparm_title=Properties&amp;sysparm_category=Data Dictionary&amp;sysparm_domain_restore=false&amp;sysparm_stack=no</query>
         <report/>
-        <roles>x_78983_data_dicti.dd_user</roles>
+        <roles>x_78983_data_dicti.dd_admin</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-09-22 15:42:10</sys_created_on>
+        <sys_created_on>2022-11-22 10:41:56</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e25ffada97421110175f7e121153afe2</sys_id>
-        <sys_name>Included Tables</sys_name>
+        <sys_id>fb53c80297531110175f7e121153af16</sys_id>
+        <sys_name>Properties</sys_name>
         <sys_overrides/>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_update_name>sys_app_module_e25ffada97421110175f7e121153afe2</sys_update_name>
+        <sys_update_name>sys_app_module_fb53c80297531110175f7e121153af16</sys_update_name>
         <timeline_page/>
-        <title>Included Tables</title>
+        <title>Properties</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>
