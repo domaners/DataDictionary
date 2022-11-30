@@ -31,6 +31,9 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
 	
+	if(!gs.isInteractive())
+		return;
+	
 	var thisInstance = gs.getProperty("instance_name");
 	var monitoredInstances = gs.getProperty("x_78983_data_dicti.monitored_instances")+'';
 	if(monitoredInstances.indexOf(thisInstance) == -1)

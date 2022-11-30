@@ -13,19 +13,14 @@ ddPayloadProcessor.prototype = {
 
     TABLE: new x_78983_data_dicti.ddUtils().TABLE,
     approvalRequired: false,
-	impactedFields: [],
+    impactedFields: [],
 
     process: function(payloadArr, updateSysId) {
         for (var i = 0; i < payloadArr.length; i++) {
-			var payloadObj = payloadArr[i];
-            var payloadStr = payloadObj.xml + '';
-            // STUB: Needs fixing
-			/*var ignoredAttributes = JSON.parse(gs.getProperty(""));
-			for(var j = 0; j<ignoredAttributes.length; j++)
-				payloadStr = this.removeAttrFromPayload(payloadStr, ignoredAttributes[j]);
-			*/
-			
-			var impactedCIs = [];
+            var payloadObj = payloadArr[i];
+            var payloadStr = this._stripExcludedFieldsFromPayload(payloadObj.xml + '');
+
+            var impactedCIs = [];
             var payloadGr = new GlideRecord(this.TABLE.UPDATE_PAYLOAD);
             payloadGr.initialize();
             payloadGr.payload = payloadStr;
@@ -53,6 +48,7 @@ ddPayloadProcessor.prototype = {
                 impCiGr.insert();
             }
         }
+        this.approvalRequired = true;
         return this.approvalRequired;
     },
 
@@ -62,69 +58,91 @@ ddPayloadProcessor.prototype = {
         ddEntries.query();
         while (ddEntries.next()) {
 
-            if (impactedCIs.indexOf(ddEntries.service + '') == -1)
-                impactedCIs.push(ddEntries.service + '');
-
             gs.info("AND Check field " + ddEntries.table.table_name + "." + ddEntries.field_name);
             if (payloadStr.indexOf(ddEntries.table.table_name + '') > -1 &&
                 payloadStr.indexOf(ddEntries.field_name + '') > -1) {
-                this.addImpactedField(ddEntries.table.table_name, ddEntries.field_name, updateSysId, "unknown");
+                this.addImpactedField(ddEntries.table.table_name, ddEntries.field_name, updateSysId, "unknown", ddEntries.description+'');
                 this.approvalRequired = true;
+                if (impactedCIs.indexOf(ddEntries.service + '') == -1)
+                    impactedCIs.push(ddEntries.service + '');
             }
         }
     },
 
     parseNewDictionaryEntry: function(payloadStr, impactedCIs, updateSysId) {
         var tableName = this.getElementFromPayload(payloadStr, 'table="', '"');
-		var elementName = this.getElementFromPayload(payloadStr, 'element="', '"');
-		
-		var includedTable = new GlideAggregate(this.TABLE.DD_TABLE);
-		includedTable.addQuery("table_name", tableName);
-		includedTable.addAggregate("COUNT");
-		includedTable.query();
-		includedTable.next();
-		if(includedTable.getAggregate("COUNT") == 0)
-			return;
-		
-		var ddEntry = new GlideAggregate(this.TABLE.DD_FIELD);
-		ddEntry.addQuery("table.table_name", tableName);
-		ddEntry.addQuery("field_name", elementName);
-		ddEntry.addAggregate("COUNT");
-		ddEntry.query();
-		ddEntry.next();
-		if(ddEntry.getAggregate("COUNT") == 0) {
-			this.addImpactedField(tableName, elementName, updateSysId, "new_field");
+        var elementName = this.getElementFromPayload(payloadStr, 'element="', '"');
+
+        var includedTable = new GlideAggregate(this.TABLE.DD_TABLE);
+        includedTable.addQuery("table_name", tableName);
+        includedTable.addAggregate("COUNT");
+        includedTable.query();
+        includedTable.next();
+        if (includedTable.getAggregate("COUNT") == 0)
+            return;
+
+        var ddEntry = new GlideRecord(this.TABLE.DD_FIELD);
+        ddEntry.addQuery("table.table_name", tableName);
+        ddEntry.addQuery("field_name", elementName);
+        ddEntry.query();
+        if (!ddEntry.hasNext()) {
+            this.addImpactedField(tableName, elementName, updateSysId, "new_field", "");
             this.approvalRequired = true;
-		} else
-			this.parseXmlForFieldAndTable(payloadStr, impactedCIs, updateSysId);
-		
+        } else if (ddEntry.next())
+            this.parseXmlForFieldAndTable(payloadStr, impactedCIs, updateSysId);
+
     },
 
-    addImpactedField: function(tableName, fieldName, updateSysId, updateType) {
-		if(this.impactedFields.indexOf(tableName + "." + fieldName) > -1)
-			return;
-		
+    addImpactedField: function(tableName, fieldName, updateSysId, updateType, fieldDesc) {
+        if (this.impactedFields.indexOf(tableName + "." + fieldName) > -1)
+            return;
+
         var impactedField = new GlideRecord(this.TABLE.IMPACTED_FIELD);
         impactedField.initialize();
         impactedField.table_name = tableName;
         impactedField.field_name = fieldName;
+		impactedField.description_of_field_data = fieldDesc;
         impactedField.dictionary_update = updateSysId + '';
-		impactedField.update_type = updateType;
+        impactedField.update_type = updateType;
         impactedField.insert();
-		
-		this.impactedFields.push(tableName + "." + fieldName);
+
+        this.impactedFields.push(tableName + "." + fieldName);
     },
-	
-	getElementFromPayload: function(payloadStr, startStr, endStr) {
-		var startIndex = payloadStr.indexOf(startStr) + startStr.length;
-		var endIndex = payloadStr.indexOf(endStr, startIndex) - startIndex;
-		return payloadStr.substr(startIndex, endIndex);
-	},
-	
-	removeAttrFromPayload: function(payloadStr, attr) {
-		//STUB: Process the payload to remove the passed attribute and return
-		return payloadStr;
-	},
+
+    getElementFromPayload: function(payloadStr, startStr, endStr) {
+        var startIndex = payloadStr.indexOf(startStr) + startStr.length;
+        var endIndex = payloadStr.indexOf(endStr, startIndex) - startIndex;
+        return payloadStr.substr(startIndex, endIndex);
+    },
+
+    _stripExcludedFieldsFromPayload: function(xml) {
+        var excludeList = gs.getProperty("x_78983_data_dicti.ignored_payload_fields") + '';
+		excludeList = excludeList.split(",");
+        gs.info("excludeList: " + excludeList);
+
+        for (var i = 0; i < excludeList.length; i++) {
+            var startStr = '<' + excludeList[i];
+            var startIndex = xml.indexOf(startStr);
+            gs.info("startIndex: " + startIndex);
+            if (startIndex == -1)
+                continue;
+			
+            var endStr = '</' + excludeList[i] + '>';
+            var endIndex = xml.indexOf(endStr);
+            gs.info("endIndex: " + endIndex);
+			if (endIndex == -1)
+                continue;
+
+            var elementLength = endIndex - startIndex + endStr.length;
+            var elementToRemove = xml.substr(startIndex, elementLength);
+            gs.info(elementToRemove);
+
+            xml = xml.replace(elementToRemove, "");
+        }
+
+        gs.info("xml: " + xml);
+        return xml;
+    },
 
     type: 'ddPayloadProcessor'
 };]]></script>

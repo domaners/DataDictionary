@@ -3,114 +3,142 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
             <position>0</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>26f6a61e97621110175f7e121153af17</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>e0ffecdc97a31110175f7e121153afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>table_name</element>
             <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>eaf6a61e97621110175f7e121153af17</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>68ffecdc97a31110175f7e121153afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>field_name</element>
             <position>2</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>6ef6a61e97621110175f7e121153af17</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>e8ffecdc97a31110175f7e121153afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>update_type</element>
             <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>eef6a61e97621110175f7e121153af17</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>6cffecdc97a31110175f7e121153afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>62f6a61e97621110175f7e121153af18</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>ecffecdc97a31110175f7e121153afce</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>dictionary_update</element>
             <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>e2f6a61e97621110175f7e121153af18</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>60ffecdc97a31110175f7e121153afcf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>impact_status</element>
             <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>66f6a61e97621110175f7e121153af18</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>e0ffecdc97a31110175f7e121153afcf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>7</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-10-17 10:27:04</sys_created_on>
-            <sys_id>e6f6a61e97621110175f7e121153af18</sys_id>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>64ffecdc97a31110175f7e121153afcf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-10-17 10:27:04</sys_updated_on>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description_of_field_data</element>
+            <position>8</position>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>e4ffecdc97a31110175f7e121153afcf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description_of_proposed_change</element>
+            <position>9</position>
+            <sys_created_by>adam.domanski</sys_created_by>
+            <sys_created_on>2022-11-29 13:41:56</sys_created_on>
+            <sys_id>68ffecdc97a31110175f7e121153afcf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_78983_data_dicti_impacted_field" sys_domain="global" view="Default view">e59ce53097a61110175f7e121153af63</sys_ui_section>
+            <sys_updated_by>adam.domanski</sys_updated_by>
+            <sys_updated_on>2022-11-29 13:41:56</sys_updated_on>
+            <sys_user/>
+            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>

@@ -147,10 +147,10 @@
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-11-23 12:09:18</sys_created_on>
         <sys_id>8d31edd297931110175f7e121153affa</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 13:37:29</sys_updated_on>
+        <sys_updated_on>2022-11-28 11:27:46</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=8d31edd297931110175f7e121153affa"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -175,18 +175,24 @@
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-11-23 12:09:19</sys_created_on>
         <sys_id>c131211697931110175f7e121153af15</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 13:37:29</sys_updated_on>
+        <sys_updated_on>2022-11-28 11:27:46</sys_updated_on>
         <value>(function execute(inputs, outputs) {
 
    try { 
-     var r = new sn_ws.RESTMessageV2('x_78983_data_dicti.SN DataDictionary', 'CompleteSourceUpdateSet');
-     r.setStringParameterNoEscape('source_instance', "piit17");// inputs.source_instance_name);
+     var r = new sn_ws.RESTMessageV2('x_78983_data_dicti.SN DataDictionary', 'ChangeSourceUpdateSetState');
+     r.setStringParameterNoEscape('source_instance', inputs.source_instance_name);
 	 
      // For testing purposes only, to be deleted
-     var overrideEndpoint = "https://" + inputs.source_instance_name + ".service-now.com/api/cscm4/data_dictionary/complete_update_set";
+     var overrideEndpoint = "https://" + inputs.source_instance_name + ".service-now.com/api/cscm4/data_dictionary/change_update_set_state";
      r.setEndpoint(overrideEndpoint);
+     
+     var bodyJson = {
+        "update_set_sys_id": inputs.update_set_sys_id,
+        "new_state": inputs.new_state
+     };
+     r.setRequestBody(JSON.stringify(bodyJson));
           
      //override authentication profile 
      //authentication type ='basic'/ 'oauth2'
@@ -202,33 +208,23 @@
 
      var response = r.execute();
      var responseBody = response.getBody();
-     outputs.http_status = response.getStatusCode();
+     var httpStatus = response.getStatusCode();
      
      var responseJson = JSON.parse(response.getBody()).result;
-     if (responseJson.requires_approval)
+
+     //gs.info("responseJson: " + JSON.stringify(responseJson));
+
+     if (responseJson.confirmed)
        outputs.closure_confirmed = true;
   }
   catch(ex) {
    var message = ex.message;
   }
   
-})(inputs, outputs);
-</value>
+})(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=8d31edd297931110175f7e121153affa"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>8d31edd297931110175f7e121153affa</id>
-        <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-11-23 12:09:18</sys_created_on>
-        <sys_id>0131211697931110175f7e121153af14</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 12:09:18</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>new_state</field>
         <id>8d31edd297931110175f7e121153affa</id>
@@ -240,18 +236,6 @@
         <sys_updated_on>2022-11-23 12:09:19</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_8d31edd297931110175f7e121153affa</table>
         <value>{{action.new_state}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>8d31edd297931110175f7e121153affa</id>
-        <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-11-23 12:09:18</sys_created_on>
-        <sys_id>0931211697931110175f7e121153af14</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 12:09:18</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>source_instance_name</field>
@@ -711,7 +695,7 @@
         <sys_created_on>2022-11-23 12:09:18</sys_created_on>
         <sys_id>0931211697931110175f7e121153af0f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Closure Confirmed</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -734,7 +718,7 @@
         <sys_created_on>2022-11-23 13:37:28</sys_created_on>
         <sys_id>6c65bdd697d31110175f7e121153afd8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>HTTP Response Status</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1372,7 +1356,7 @@
         <sys_created_on>2022-11-23 12:09:18</sys_created_on>
         <sys_id>4531edd297931110175f7e121153aff0</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Update Set Sys ID</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1395,7 +1379,7 @@
         <sys_created_on>2022-11-23 12:09:18</sys_created_on>
         <sys_id>4931edd297931110175f7e121153aff8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Source Instance Name</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1418,7 +1402,7 @@
         <sys_created_on>2022-11-23 12:09:18</sys_created_on>
         <sys_id>8931edd297931110175f7e121153aff4</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>New State</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1443,7 +1427,7 @@
         <sys_created_on>2022-11-23 12:10:35</sys_created_on>
         <sys_id>3771e51697931110175f7e121153af4a</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1466,7 +1450,7 @@
         <sys_created_on>2022-11-23 12:10:35</sys_created_on>
         <sys_id>3771e51697931110175f7e121153af50</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1489,7 +1473,7 @@
         <sys_created_on>2022-11-23 13:37:29</sys_created_on>
         <sys_id>6865bdd697d31110175f7e121153afe4</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>HTTP Response Code</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1512,7 +1496,7 @@
         <sys_created_on>2022-11-23 12:09:19</sys_created_on>
         <sys_id>8531211697931110175f7e121153af1d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Closure Confirmed?</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -1527,17 +1511,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Data Dictionary - Update Source Update Set State">504a155e97531110175f7e121153af2b</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"2881291697931110175f7e121153af22","name":"plan","plan_signature":null}}</plan>
-        <snapshot>c965fdd697d31110175f7e121153af73</snapshot>
+        <snapshot>f577437f97531110175f7e121153af00</snapshot>
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-11-23 12:10:38</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2881291697931110175f7e121153af22</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 13:37:32</sys_updated_on>
+        <sys_updated_on>2022-11-28 11:26:59</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1687,10 +1671,10 @@
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>4c81e51697931110175f7e121153af87</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
         <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 13:37:31</sys_updated_on>
+        <sys_updated_on>2022-11-28 11:27:47</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=4c81e51697931110175f7e121153af87"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1715,18 +1699,24 @@
         <sys_created_by>adam.domanski</sys_created_by>
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>cc81e51697931110175f7e121153af9d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 13:37:31</sys_updated_on>
+        <sys_updated_on>2022-11-28 11:27:47</sys_updated_on>
         <value>(function execute(inputs, outputs) {
 
    try { 
-     var r = new sn_ws.RESTMessageV2('x_78983_data_dicti.SN DataDictionary', 'CompleteSourceUpdateSet');
-     r.setStringParameterNoEscape('source_instance', "piit17");// inputs.source_instance_name);
+     var r = new sn_ws.RESTMessageV2('x_78983_data_dicti.SN DataDictionary', 'ChangeSourceUpdateSetState');
+     r.setStringParameterNoEscape('source_instance', inputs.source_instance_name);
 	 
      // For testing purposes only, to be deleted
-     var overrideEndpoint = "https://" + inputs.source_instance_name + ".service-now.com/api/cscm4/data_dictionary/complete_update_set";
+     var overrideEndpoint = "https://" + inputs.source_instance_name + ".service-now.com/api/cscm4/data_dictionary/change_update_set_state";
      r.setEndpoint(overrideEndpoint);
+     
+     var bodyJson = {
+        "update_set_sys_id": inputs.update_set_sys_id,
+        "new_state": inputs.new_state
+     };
+     r.setRequestBody(JSON.stringify(bodyJson));
           
      //override authentication profile 
      //authentication type ='basic'/ 'oauth2'
@@ -1742,33 +1732,23 @@
 
      var response = r.execute();
      var responseBody = response.getBody();
-     outputs.http_status = response.getStatusCode();
+     var httpStatus = response.getStatusCode();
      
      var responseJson = JSON.parse(response.getBody()).result;
-     if (responseJson.requires_approval)
+
+     //gs.info("responseJson: " + JSON.stringify(responseJson));
+
+     if (responseJson.confirmed)
        outputs.closure_confirmed = true;
   }
   catch(ex) {
    var message = ex.message;
   }
   
-})(inputs, outputs);
-</value>
+})(inputs, outputs);</value>
         <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=4c81e51697931110175f7e121153af87"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>application</field>
-        <id>4c81e51697931110175f7e121153af87</id>
-        <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-11-23 12:10:36</sys_created_on>
-        <sys_id>c481e51697931110175f7e121153af9d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 12:10:36</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
-    </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>new_state</field>
         <id>4c81e51697931110175f7e121153af87</id>
@@ -1780,18 +1760,6 @@
         <sys_updated_on>2022-11-23 12:10:36</sys_updated_on>
         <table>var__m_sys_hub_step_ext_input_4c81e51697931110175f7e121153af87</table>
         <value>{{action.new_state}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>script</field>
-        <id>4c81e51697931110175f7e121153af87</id>
-        <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-11-23 12:10:36</sys_created_on>
-        <sys_id>8881e51697931110175f7e121153af9d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>adam.domanski</sys_updated_by>
-        <sys_updated_on>2022-11-23 12:10:36</sys_updated_on>
-        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>source_instance_name</field>
@@ -2251,7 +2219,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>8881e51697931110175f7e121153af99</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Closure Confirmed</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -2274,7 +2242,7 @@
         <sys_created_on>2022-11-23 13:37:30</sys_created_on>
         <sys_id>8965fdd697d31110175f7e121153af5c</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>HTTP Response Status</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -2912,7 +2880,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>4881e51697931110175f7e121153af85</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Source Instance Name</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -2935,7 +2903,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>4c81e51697931110175f7e121153af7d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Update Set Sys ID</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -2958,7 +2926,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>c881e51697931110175f7e121153af81</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>New State</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -2983,7 +2951,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>4c81e51697931110175f7e121153afb1</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Closure Confirmed?</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -3006,7 +2974,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>4c81e51697931110175f7e121153afb5</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Action Status</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -3029,7 +2997,7 @@
         <sys_created_on>2022-11-23 13:37:31</sys_created_on>
         <sys_id>8565fdd697d31110175f7e121153af68</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>HTTP Response Code</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
@@ -3052,7 +3020,7 @@
         <sys_created_on>2022-11-23 12:10:36</sys_created_on>
         <sys_id>c481e51697931110175f7e121153afbb</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Don't Treat as Error</sys_name>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>

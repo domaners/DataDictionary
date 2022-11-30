@@ -96,12 +96,11 @@ ddUtils.prototype = {
         dictUpd.update_set_name = jsonParams.name;
         dictUpd.update_set_sys_id = jsonParams.sys_id;
         dictUpd.environment = jsonParams.environment;
-        dictUpd.approval = "not requested";
+		dictUpd.approval = "not requested";
         var updateSysId = dictUpd.insert();
 
         var payloadArr = jsonParams.payload;
         approvalRequired = new x_78983_data_dicti.ddPayloadProcessor().process(payloadArr, updateSysId);
-        //dictUpd.approval = approvalRequired == true ? "requested" : "not_required";
         dictUpd.update();
 
         return approvalRequired;
@@ -125,13 +124,36 @@ ddUtils.prototype = {
 	},
 	
 	isUserMemberOfGroup: function(userId, groupId) {
-		var grm = new GlideAggregate("sys_user_group");
+		var grm = new GlideAggregate("sys_user_grmember");
 		grm.addQuery("group", groupId);
 		grm.addQuery("user", userId);
 		grm.addAggregate("COUNT");
 		grm.query();
 		grm.next();
 		return grm.getAggregate("COUNT") > 0;
+	},
+	
+	getFlowData: function(reqGr) {
+		var hasFlows = false;
+		var hasMultipleFlows = false;
+		var flowId = "";
+
+		if (!reqGr || !reqGr.isValidRecord())
+			return {hasFlows: hasFlows, hasMultipleFlows: hasMultipleFlows, flowId: flowId, flowQuery: ""};
+
+		var flowContextGR = new GlideRecord("sys_flow_context");
+		flowContextGR.addQuery("source_table", reqGr.getRecordClassName());
+		flowContextGR.addQuery("source_record", reqGr.getUniqueValue());
+		flowContextGR.query();
+		if (flowContextGR.next()) {
+			hasFlows = true;
+			if (!flowContextGR.hasNext())
+				flowId = flowContextGR.getUniqueValue();
+			else
+				hasMultipleFlows = true;
+		}
+
+		return {hasFlows: hasFlows, hasMultipleFlows: hasMultipleFlows, flowId: flowId, flowQuery: flowContextGR.getEncodedQuery()};
 	},
 	
 	updateSourceUpdateSetState: function(updateSetSysId, newState) {

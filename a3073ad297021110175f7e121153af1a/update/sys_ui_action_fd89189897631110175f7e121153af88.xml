@@ -2,22 +2,22 @@
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
         <active>true</active>
-        <client>false</client>
+        <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
         <comments/>
-        <condition>current.state == 1 &amp;&amp; current.approval == "not requested" &amp;&amp; new x_78983_data_dicti.ddUtils().isUserMemberOfGroup(gs.getUserID(), current.assignment_group+'')</condition>
+        <condition>g_scratchpad.flowData.hasFlows === true &amp;&amp; gs.hasRole("x_78983_data_dicti.dd_admin")</condition>
         <form_action>true</form_action>
-        <form_button>true</form_button>
+        <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
         <form_context_menu>false</form_context_menu>
-        <form_link>false</form_link>
+        <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style>primary</form_style>
+        <form_style/>
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
-        <isolate_script>false</isolate_script>
+        <isolate_script>true</isolate_script>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -27,28 +27,19 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Submit for Approval</name>
-        <onclick/>
+        <name>Show Flow</name>
+        <onclick>showFlowContext();</onclick>
         <order>100</order>
-        <script><![CDATA[submitForApproval();
-
-function submitForApproval() {
-	var impFields = new GlideAggregate("x_78983_data_dicti_impacted_field");
-	impFields.addQuery("dictionary_update", current.sys_id+'');
-	impFields.addNullQuery("impact_status");
-	impFields.addAggregate("COUNT");
-	impFields.query();
-	impFields.next();
-	gs.info("AND Outstanding impacted fields: " + impFields.getAggregate("COUNT"));
-	
-	action.setRedirectURL(current);
-	
-	if(impFields.getAggregate("COUNT") == 0) {
-		current.approval = "requested";
-		current.update();
+        <script><![CDATA[function showFlowContext () {
+	var url;
+	if (g_scratchpad.flowData.hasMultipleFlows === false && g_scratchpad.flowData.flowId !== "") {
+		url = new GlideURL("/$flow-designer.do#/operations/context/" + g_scratchpad.flowData.flowId);
 	} else {
-		gs.addInfoMessage("Please assess the impact of all records in the Impacted fields related list");
+		url = new GlideURL("sys_flow_context_list.do");
+		url.addParam("sysparm_fixed_query", g_scratchpad.flowData.flowQuery);
 	}
+
+	g_navigation.open(url.getURL(), "_blank");
 }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -56,16 +47,16 @@ function submitForApproval() {
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>adam.domanski</sys_created_by>
-        <sys_created_on>2022-11-22 16:16:40</sys_created_on>
+        <sys_created_on>2022-11-29 12:04:00</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>4aed898697571110175f7e121153af8f</sys_id>
-        <sys_name>Submit for Approval</sys_name>
+        <sys_id>fd89189897631110175f7e121153af88</sys_id>
+        <sys_name>Show Flow</sys_name>
         <sys_overrides/>
         <sys_package display_value="Data Dictionary" source="x_78983_data_dicti">a3073ad297021110175f7e121153af1a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Data Dictionary">a3073ad297021110175f7e121153af1a</sys_scope>
-        <sys_update_name>sys_ui_action_4aed898697571110175f7e121153af8f</sys_update_name>
+        <sys_update_name>sys_ui_action_fd89189897631110175f7e121153af88</sys_update_name>
         <table>x_78983_data_dicti_update</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

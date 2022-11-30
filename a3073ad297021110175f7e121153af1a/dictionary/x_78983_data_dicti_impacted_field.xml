@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="29cb29fc97661110175f7e121153af57" label="Impacted field" max_length="40" name="x_78983_data_dicti_impacted_field" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Description of Field Data" max_length="4000" name="description_of_field_data" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Description of Proposed Change" max_length="4000" name="description_of_proposed_change" type="string"/>
         <element label="Dictionary update" max_length="32" name="dictionary_update" reference="x_78983_data_dicti_update" type="reference"/>
         <element label="Field name" max_length="40" name="field_name" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Impact status" max_length="40" name="impact_status" type="string">
